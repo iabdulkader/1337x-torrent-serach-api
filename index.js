@@ -55,6 +55,7 @@ async function getMagnets(urls){
                 magnet,
                 name,
                 size,
+                downloads,
                 seeders,
                 leechers,
                 img
