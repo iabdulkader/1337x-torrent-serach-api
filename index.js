@@ -43,7 +43,12 @@ async function getMagnets(urls){
              const size = $(".list").eq(0).find("li:nth-child(4) span").text();
              const seeders = $(".list").eq(1).find("li:nth-child(4) span").text();
              const leechers = $(".list").eq(1).find("li:nth-child(5) span").text();
-             const imgUrl = $("torrent-image").find("img").attr("src");
+             const imgUrl = $(".torrent-image").find("img").attr("src");
+             if(imgUrl != undefined){
+               img = `https://www.1377x.to${imgUrl}`
+             } else {
+               img = false
+             }
              
               const magnetObj =  {
                 magnet,
@@ -51,7 +56,7 @@ async function getMagnets(urls){
                 size,
                 seeders,
                 leechers,
-                img: `https://www.1377x.to${imgUrl}`
+                img
               }
              // console.log(magnetObj)
               return magnetObj
