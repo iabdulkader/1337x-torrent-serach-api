@@ -60,6 +60,12 @@ async function getMagnets(urls){
     }
 };
 
+app.get("/", (req, res) => {
+  res.json({
+    status: true,
+    server: "running"
+  })
+})
 
 app.post('/search', async (req, res) => {
   const query = req.body.query || 'venom'
