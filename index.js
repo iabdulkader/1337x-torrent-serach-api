@@ -76,6 +76,7 @@ app.post('/search', async (req, res) => {
  res.json(response)
 })
 
-app.listen(3000, () => {
+const PORT = process.env.PORT || 3000
+app.listen(PORT, () => {
   console.log("We Are live on 3000");
 });
