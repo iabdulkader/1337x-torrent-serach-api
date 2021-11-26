@@ -5,6 +5,8 @@
 ### Medthod: POST
 <code>
   body:{
-    "query": "Your Query"
+    "query": "Your Query",
+    "page": "Page Number"
   }
+  // Page parameter is optional. By default it will show the results from Page 1
 </code>

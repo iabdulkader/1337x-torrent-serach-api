@@ -77,9 +77,10 @@ app.get("/", (req, res) => {
 })
 
 app.post('/search', async (req, res) => {
-  const query = req.body.query || 'venom'
+  const query = req.body.query || 'venom';
+  const page = req.body.page || 1;
   const encodedQuery = encodeURI(query)
-  const url = `https://www.1377x.to/search/${encodedQuery}/1/`
+  const url = `https://www.1377x.to/search/${encodedQuery}/${page}/`
   
  const response = await getFromSearch(url)
  res.json(response)
