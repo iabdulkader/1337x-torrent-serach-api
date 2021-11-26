@@ -4,9 +4,11 @@
 #### `/search` 
 ### Medthod: POST
 <code>
-  body:{
-    "query": "Your Query",
-    "page": "Page Number"
+  body:{<br>
+    "query": "Your Query",<br>
+    "page": "Page Number"<br>
   }
+<br>
+<br>
   // Page parameter is optional. By default it will show the results from Page 1
 </code>
