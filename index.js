@@ -1,13 +1,19 @@
 const express = require("express");
 const axios = require("axios");
 const cheerio = require("cheerio");
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.js');
 
 const app = express();
+
+
 
 // Middlewares
 app.use(express.json());
 app.use(express.json({ extended: false }));
 app.use(express.urlencoded({ extended: true }));
+
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 async function getFromSearch(url){
       const urls =[];
@@ -81,7 +87,7 @@ app.post('/search', async (req, res) => {
   const page = req.body.page || 1;
   const encodedQuery = encodeURI(query)
   const url = `https://www.1377x.to/search/${encodedQuery}/${page}/`
-  
+  console.log(url)
  const response = await getFromSearch(url)
  res.json(response)
 })

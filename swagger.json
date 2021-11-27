@@ -1,0 +1,23 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "1337x API",
+    "description": "Unofficial 1337x Torrent Searcher API",
+    "version": "3.0.0",
+  },
+  "host": process.env.APP_URL?.split("://")[1] || "localhost:3000",
+  "basePath": "/",
+  "license": {
+    "name": "Apache 2.0",
+    "url": "https://github.com/iabdulkader/1337x-torrent-search-api/blob/v3/LICENSE",
+  },
+  "tags": [
+    {
+      "name": "Torrent Search",
+      "description": "Search any movie or anything from torrent.",
+    }
+  ],
+  "schemes": [process.env.APP_URL?.split("://")[0] || "http"],
+  "consumes": [],
+  "produces": [],
+}
