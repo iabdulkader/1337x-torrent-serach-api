@@ -2,10 +2,10 @@
 
 ### Search Endpoint
  ```bash
- /Search
- Medthod: POST
+ /search
  ```
- ##body
+<h2>Method: POST</h2>
+<h3>body</h3>
 ```bash
   {
     "query": "Your Query",
