@@ -5,7 +5,8 @@
  /search
  ```
 <h2>Method: POST</h2>
-<h3>body</h3>
+<h2>body</h2>
+
 ```bash
   {
     "query": "Your Query",
