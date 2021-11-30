@@ -1,14 +1,14 @@
 ## This Is 1337x Torrent Searcher Unofficial Rest API
 
 ### Search Endpoint
-#### `/search` 
-### Medthod: POST
-<code>
-  body:{<br>
-    "query": "Your Query",<br>
-    "page": "Page Number"<br>
+ ```bash
+ /Search
+ Medthod: POST
+ ```
+ ##body
+```bash
+  {
+    "query": "Your Query",
+    "page": "Page Number" # Optional. Page number where to search
   }
-<br>
-<br>
-  // Page parameter is optional. By default it will show the results from Page 1
-</code>
+```
