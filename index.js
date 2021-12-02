@@ -6,7 +6,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.js');
 
 const app = express();
-const cache = apicache.middleware;
+let cache = apicache.middleware;
 
 
 // Middlewares
@@ -76,14 +76,14 @@ async function getMagnets(urls){
     }
 };
 
-app.get("/", cache('6 minutes'), (req, res) => {
+app.get("/", (req, res) => {
   res.json({
     status: true,
     server: "running"
   })
 })
 
-app.post('/search', async (req, res) => {
+app.post('/search', cache('5 minutes'), async (req, res) => {
   const query = req.body.query || 'venom';
   const page = req.body.page || 1;
   const encodedQuery = encodeURI(query)
