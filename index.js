@@ -49,10 +49,10 @@ async function getMagnets(urls){
              
             const magnet = $('.dropdown-menu', html).find('li:nth-child(4) a').attr('href')
             const name = $(".box-info-heading").text().trim();
-             const size = $(".list").eq(0).find("li:nth-child(4) span").text();
-             const downloads = $(".list").eq(1).find("li:nth-child(1) span").text();
-             const seeders = $(".list").eq(1).find("li:nth-child(4) span").text();
-             const leechers = $(".list").eq(1).find("li:nth-child(5) span").text();
+             const size = $(".list").eq(1).find("li:nth-child(4) span").text();
+             const downloads = $(".list").eq(2).find("li:nth-child(1) span").text();
+             const seeders = $(".list").eq(2).find("li:nth-child(4) span").text();
+             const leechers = $(".list").eq(2).find("li:nth-child(5) span").text();
              const imgUrl = $(".torrent-image").find("img").attr("src");
              if(imgUrl != undefined){
                img = `https://www.1377x.to${imgUrl}`
