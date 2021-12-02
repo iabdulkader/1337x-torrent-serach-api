@@ -1,5 +1,6 @@
 const express = require("express");
 const axios = require("axios");
+const cors = require("cors");
 const cheerio = require("cheerio");
 const apicache = require('apicache');
 const swaggerUi = require('swagger-ui-express');
@@ -13,6 +14,7 @@ let cache = apicache.middleware;
 app.use(express.json());
 app.use(express.json({ extended: false }));
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
