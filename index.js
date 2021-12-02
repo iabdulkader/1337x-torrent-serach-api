@@ -1,11 +1,12 @@
 const express = require("express");
 const axios = require("axios");
 const cheerio = require("cheerio");
+const apicache = require('apicache');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.js');
 
 const app = express();
-
+const cache = apicache.middleware;
 
 
 // Middlewares
@@ -75,7 +76,7 @@ async function getMagnets(urls){
     }
 };
 
-app.get("/", (req, res) => {
+app.get("/", cache('6 minutes'), (req, res) => {
   res.json({
     status: true,
     server: "running"
