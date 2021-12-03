@@ -16,8 +16,6 @@ app.use(express.json({ extended: false }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
 async function getFromSearch(url){
       const urls =[];
       const response = await axios.get(url)
@@ -83,7 +81,13 @@ app.get("/", (req, res) => {
     status: true,
     server: "running"
   })
-})
+});
+
+// Swagger Ui configuration 
+var options = {
+  customCssUrl: '/docs/swagger-ui.css'
+};
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
 
 app.post('/search', cache('5 minutes'), async (req, res) => {
   const query = req.body.query || 'venom';
