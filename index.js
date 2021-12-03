@@ -85,7 +85,7 @@ app.get("/", (req, res) => {
 
 // Swagger Ui configuration 
 var options = {
-  customCssUrl: '/docs/swagger-ui.css'
+  customCssUrl: '/public/docs/swagger-ui.css'
 };
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
 
