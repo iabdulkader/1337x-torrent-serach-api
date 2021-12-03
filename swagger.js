@@ -23,7 +23,7 @@ module.exports = {
   paths: {
     "/search": {
       post: {
-        tags: ["Torreng"],
+        tags: ["Torrent Search"],
         description: "Search Torrent from query",
         parameters: [
           {
