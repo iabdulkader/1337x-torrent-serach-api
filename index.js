@@ -88,7 +88,7 @@ app.get("/", (req, res) => {
 var options = {
   customCssUrl: '/public/docs/swagger-ui.css'
 };
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.post('/search', cache('5 minutes'), async (req, res) => {
   const query = req.body.query || 'venom';
