@@ -2,12 +2,10 @@ const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 const cheerio = require("cheerio");
-const apicache = require('apicache');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.js');
 
 const app = express();
-let cache = apicache.middleware;
 
 
 // Middlewares
@@ -90,7 +88,7 @@ var options = {
 };
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-app.post('/search', cache('5 minutes'), async (req, res) => {
+app.post('/search', async (req, res) => {
   const query = req.body.query || 'venom';
   const page = req.body.page || 1;
   const encodedQuery = encodeURI(query)
